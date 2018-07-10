@@ -3,7 +3,8 @@
 __pycache__/
 env
 
-
+cats/.idea/
+*cats/.idea
 .installed.cfg
 bin
 develop-eggs
