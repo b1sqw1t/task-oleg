@@ -2,6 +2,7 @@
 *.pyo
 __pycache__/
 env
+db.sqlite3
 
 cats/.idea/
 *cats/.idea
