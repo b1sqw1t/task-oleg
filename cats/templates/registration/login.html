@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Авторизация</title>
+</head>
+<body>
+<h3><a href="/">Домой</a></h3>
+<h1>Авторизация</h1>
+{% if user.is_authenticated %}
+
+<p>Вы авторизованы. <a href="/accounts/logout/">Выйти?</a> </p>
+
+{% else %}
+<form action="" method="post">
+    {% csrf_token %}
+    <p>Введите логин : {{ form.username }}</p>
+    <p>Введите пароль :{{ form.password }}</p>
+    <p><input type="submit" value="Войти"></p>
+    <input type="hidden" class="next" value="{{ next }}">
+</form>
+{% endif %}
+</body>
+</html>

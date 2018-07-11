@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Кот {{ cat.Name }}</title>
+</head>
+<body>
+    {% if cat %}
+        <p>Кличка: {{cat.Name }} </p>
+        <p>Хозяин: {{ cat.User }}</p>
+        <p>Возраст: {{ cat.Age }}</p>
+        <p>Порода: {{ cat.Breed }}</p>
+        <p>Волосатость: {{ cat.Hairiness }}</p>
+        <hr>
+
+        <p>Создан: {{ cat.Created }}</p>
+        <p>Изменен: {{ cat.Changed }}</p>
+    {% endif %}
+        {% if error %}
+        {{ error }}
+        {% endif %}
+</body>
+</html>

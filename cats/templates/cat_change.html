@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Изменение кота {{cat.Name }}</title>
+</head>
+<body>
+{% if cat %}
+    <form action="" method="post">
+        {% csrf_token %}
+        <p>Кличка: {{cat.Name }} </p>
+        <p>{{ cat.User.as_hidden }}</p>
+        <p>Возраст: {{ cat.Age }}</p>
+        <p>Порода: {{ cat.Breed }}</p>
+        <p>Волосатость: {{ cat.Hairiness }}</p>
+    <input type="submit" value="Сохранить изменения">
+    </form>
+{% else %}
+{{error}}
+{% endif %}
+</body>
+</html>

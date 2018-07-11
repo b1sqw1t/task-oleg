@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Домашняя страница</title>
+</head>
+<body>
+
+{% if user.is_authenticated %}
+    <p>Вы вошли в систему как {{ user.username }} / <a href="/accounts/logout/">Выйти</a> </p>
+
+    <p><a href="{% url 'create_cat' %}"> Завести кота</a></p>
+    <br><hr>
+    <h1 align="center">Все коты пользователя {{ user.username }}</h1>
+    <ol>
+        {% for cat in objects %}
+        <h2><li>  {{ cat }} | <a href="{% url 'cat_view' cat.id %}">Посмотреть кота </a> | <a href="{% url 'cat_edit' cat.id %}">Изменить кота</a> </li></h2>
+        {% endfor %}
+    </ol>
+{% else %}
+    <p><a href="/accounts/login/"> Войти в систему</a></p>
+    <p><a href="/accounts/registration/">Зарегистрироваться</a></p>
+    <p>Забыл пароль?</p>
+{% endif %}
+
+
+
+</body>
+</html>

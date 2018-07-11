@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Создание кота</title>
+</head>
+<body>
+<form action="" method="post">
+    {% csrf_token %}
+    <h1>СОЗДАНИЕ КОТА</h1>
+    <p>{{ form.User.as_hidden }}</p>
+    <p>Кличка: {{ form.Name }}</p>
+    <p>Возраст: {{ form.Age }}</p>
+    <p>Порода: {{ form.Breed }}</p>
+    <p>Волосатость: {{ form.Hairiness }}</p>
+    <p><input type="submit" value="Создать"></p>
+</form>
+</body>
+</html>
